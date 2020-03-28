@@ -235,10 +235,6 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 "}}}
 
 " Lightline {{{
-function! CocStatus()
-    return trim(get(g:, 'coc_status', ''))
-endfunction
-
 let g:lightline = {
 \ 'colorscheme': 'deepspace',
 \ 'active': {

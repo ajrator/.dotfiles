@@ -350,3 +350,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 " Goyo with Limelight for Focus Mode in Vim
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" Enable Relative Line Numbers
+set relativenumber

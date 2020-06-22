@@ -37,10 +37,6 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 "}}}
 
-" remap buffer switching
-map <Tab> :bnext<CR>
-map <S-Tab> :bprevious<CR>
-
 " Easymotion {{{
 " <Leader>f{char} to move to {char}
 map  <Space>f <Plug>(easymotion-bd-f)
@@ -146,18 +142,6 @@ augroup vimrc
   \|    endfor
   \|  endif
 augroup end
-"}}}
-
-" Tab Trigger {{{
-"inoremap <silent><expr> <TAB>
-"      \ pumvisible() ? "\<C-n>" :
-"      \ <SID>check_back_space() ? "\<TAB>" :
-"      \ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"function! s:check_back_space() abort
-"  let col = col('.') - 1
-"  return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
 "}}}
 
 " Proper highlighting for config file {{{

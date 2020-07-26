@@ -18,7 +18,6 @@ Plug 'itchyny/vim-cursorword'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
 Plug 'preservim/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 call plug#end()
@@ -318,18 +317,6 @@ let $FZF_DEFAULT_OPTS = '--ansi --layout=reverse --bind ctrl-a:select-all'
 " Files with preview
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_exit_from_visual_mode=1
-" Default mapping
-let g:multi_cursor_start_word_key      = '<c-m>'
-let g:multi_cursor_select_all_word_key = '<A-m>'
-let g:multi_cursor_start_key           = 'g<c-m>'
-let g:multi_cursor_select_all_key      = 'g<A-m>'
-let g:multi_cursor_next_key            = '<c-m>'
-let g:multi_cursor_prev_key            = '<c-w>'
-let g:multi_cursor_skip_key            = '<c-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
 
 " Goyo with Limelight for Focus Mode in Vim
 autocmd! User GoyoEnter Limelight

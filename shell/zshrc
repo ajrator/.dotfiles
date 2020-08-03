@@ -4,10 +4,25 @@
 # Path to your oh-my-zsh installation.
 case `uname` in
     Darwin)	
-      export ZSH="/Users/ajrator/.oh-my-zsh"
+        export ZSH="/Users/ajrator/.oh-my-zsh"
     ;;
     Linux)
-      export ZSH="/home/ajrator/.oh-my-zsh"
+        export ZSH="/home/ajrator/.oh-my-zsh"
+
+	# >>> conda initialize >>>
+	# !! Contents within this block are managed by 'conda init' !!
+	__conda_setup="$('/home/ajrator/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+	if [ $? -eq 0 ]; then
+	    eval "$__conda_setup"
+	else
+	    if [ -f "/home/ajrator/miniconda3/etc/profile.d/conda.sh" ]; then
+		. "/home/ajrator/miniconda3/etc/profile.d/conda.sh"
+	    else
+		export PATH="/home/ajrator/miniconda3/bin:$PATH"
+	    fi
+	fi
+	unset __conda_setup
+	# <<< conda initialize <<<
       cd ~
     ;;
 esac
@@ -238,19 +253,3 @@ bindkey '^v' autosuggest-accept
 
 alias v="vim +Files"
 alias c="clear"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/ajrator/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/ajrator/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/ajrator/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/ajrator/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-

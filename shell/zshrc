@@ -5,6 +5,7 @@
 case `uname` in
     Darwin)	
         export ZSH="/Users/ajrator/.oh-my-zsh"
+	export PATH="/Users/ajrator/anaconda3/bin/:$PATH"
     ;;
     Linux)
         export ZSH="/home/ajrator/.oh-my-zsh"
@@ -16,7 +17,7 @@ case `uname` in
 	    eval "$__conda_setup"
 	else
 	    if [ -f "/home/ajrator/miniconda3/etc/profile.d/conda.sh" ]; then
-		. "/home/ajrator/miniconda3/etc/profile.d/conda.sh"
+# . "/home/ajrator/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
 	    else
 		export PATH="/home/ajrator/miniconda3/bin:$PATH"
 	    fi

@@ -20,6 +20,9 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Incsearch {{{

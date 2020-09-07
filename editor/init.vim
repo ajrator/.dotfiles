@@ -2,22 +2,22 @@
 
 call plug#begin("~/.vim/plugged")
 Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'mhartington/oceanic-next'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': ['java']}
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'ap/vim-buftabline'
 Plug 'terryma/vim-expand-region'
 Plug 'itchyny/vim-cursorword'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
-Plug 'preservim/nerdcommenter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-surround'
@@ -54,14 +54,12 @@ nmap <Space>w <Plug>(easymotion-overwin-w)
 " Enable line numbers
 set number
 
-" Oceanic-Next Theme
-if (has("termguicolors"))
- set termguicolors
-endif
+" Enable Relative Line Numbers
+set relativenumber
 
 " Theme
 syntax enable
-colorscheme OceanicNext
+autocmd vimenter * colorscheme gruvbox
 
 " Remap buffer switching
 map <Tab> :bnext<CR>
@@ -77,9 +75,6 @@ map <C-n> :NERDTreeToggle<CR>
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 "}}}
-
-" Execute current Python3 file with F5
-map <F5> :w<CR>:!python3 %<CR>
 
 " Emacs motion keys added for Insert Mode for Vim
 imap <C-a> <ESC>I
@@ -151,7 +146,6 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 "}}}
 
 " Mappings {{{
-
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " Gotos
@@ -190,7 +184,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
 "}}}
 
 " Sign Colors {{{
@@ -222,7 +215,6 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Lightline {{{
 let g:lightline = {
-\ 'colorscheme': 'deepspace',
 \ 'active': {
 \   'left': [ [ 'mode', 'paste' ],
 \             [ 'readonly', 'filename', 'cocstatus', 'modified', 'coc_error', 'coc_warning', 'coc_info', 'coc_hint' ] ],
@@ -324,6 +316,3 @@ command! -bang -nargs=? -complete=dir Files
 " Goyo with Limelight for Focus Mode in Vim
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-
-" Enable Relative Line Numbers
-set relativenumber

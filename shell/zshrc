@@ -9,7 +9,10 @@ case `uname` in
     ;;
     Linux)
         export ZSH="/home/ajrator/.oh-my-zsh"
+	ZSH_DISABLE_COMPFIX=true
 
+	[[ -s /home/ajrator/.autojump/etc/profile.d/autojump.sh ]] && source /home/ajrator/.autojump/etc/profile.d/autojump.sh
+	autoload -U compinit && compinit -u
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
 	__conda_setup="$('/home/ajrator/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

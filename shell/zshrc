@@ -238,7 +238,7 @@ fzf-localfile-widget () {
 }
 
 zle -N fzf-localfile-widget
-bindkey '^F' fzf-localfile-widget
+bindkey '^z' fzf-localfile-widget
 
 # Autojump
 j() {

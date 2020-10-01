@@ -6,6 +6,7 @@ case `uname` in
     Darwin)	
         export ZSH="/Users/ajrator/.oh-my-zsh"
 	export PATH="/Users/ajrator/anaconda3/bin/:$PATH"
+	source ~/anaconda3/etc/profile.d/conda.sh
     ;;
     Linux)
         export ZSH="/home/ajrator/.oh-my-zsh"

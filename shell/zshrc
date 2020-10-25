@@ -13,6 +13,8 @@ case `uname` in
 	ZSH_DISABLE_COMPFIX=true
 	export CUDA_VISIBLE_DEVICES=0
 	export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
+	export LD_LIBRARY_PATH=/usr/local/cuda-11.1/lib64\
+		                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 	export PATH=$PATH:~/.local/bin
 
 	[[ -s /home/ajrator/.autojump/etc/profile.d/autojump.sh ]] && source /home/ajrator/.autojump/etc/profile.d/autojump.sh

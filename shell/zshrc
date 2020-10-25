@@ -12,6 +12,7 @@ case `uname` in
         export ZSH="/home/ajrator/.oh-my-zsh"
 	ZSH_DISABLE_COMPFIX=true
 	export CUDA_VISIBLE_DEVICES=0
+	export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
 	export PATH=$PATH:~/.local/bin
 
 	[[ -s /home/ajrator/.autojump/etc/profile.d/autojump.sh ]] && source /home/ajrator/.autojump/etc/profile.d/autojump.sh

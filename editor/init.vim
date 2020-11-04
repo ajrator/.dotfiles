@@ -1,4 +1,13 @@
-" Ajmal Khan Neovim Config
+"______________________ 
+"< Ajmal's NVIM Config >
+ "---------------------- 
+        "\   ^__^
+         "\  (oo)\_______
+            "(__)\       )\/\
+                "||----w |
+                "||     ||
+"
+"
 
 call plug#begin("~/.vim/plugged")
 Plug 'preservim/nerdtree'
@@ -40,7 +49,6 @@ map g# <Plug>(incsearch-nohl-g#)
 "}}}
 
 " Easymotion {{{
-" <Leader>f{char} to move to {char}
 map  <Space>f <Plug>(easymotion-bd-f)
 nmap <Space>f <Plug>(easymotion-overwin-f)
 " Move to line
@@ -83,8 +91,8 @@ imap <C-f> <RIGHT>
 imap <C-b> <LEFT>
 imap <C-n> <DOWN>
 imap <C-p> <UP>
-" Coc.nvim {{{
 
+" Coc.nvim {{{
 " Basic {{{
 set nobackup
 set nowritebackup
@@ -211,6 +219,7 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+"}}}
 "}}}
 
 " Lightline {{{

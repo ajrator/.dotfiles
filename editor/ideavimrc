@@ -23,3 +23,5 @@ imap <C-f> <Right>
 imap <C-b> <Left>
 imap <C-n> <Down>
 imap <C-p> <Up>
+
+set number relativenumber

@@ -11,6 +11,9 @@ case `uname` in
     Linux)
         export ZSH="/home/ajrator/.oh-my-zsh"
 	ZSH_DISABLE_COMPFIX=true
+	export CUDA_VISIBLE_DEVICES=0
+	export PATH=$PATH:~/.local/bin
+	export LD_LIBRARY_PATH=/usr/lib/
 
 	[[ -s /home/ajrator/.autojump/etc/profile.d/autojump.sh ]] && source /home/ajrator/.autojump/etc/profile.d/autojump.sh
 	autoload -U compinit && compinit -u

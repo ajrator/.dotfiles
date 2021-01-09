@@ -200,3 +200,6 @@ alias c="clear"
 
 # Start zsh-vim-mode in INSERT mode
 VIM_MODE_INITIAL_KEYMAP=viins
+
+# Configure Go Path
+export GOPATH=$HOME/go

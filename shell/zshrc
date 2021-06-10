@@ -20,6 +20,8 @@ case `uname` in
 	export PATH=$PATH:~/.local/bin
 	export LD_LIBRARY_PATH=/usr/lib/
 	export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+	alias kubectx=kubectl ctx
+	alias kubens=kubectl ns
 
 	[[ -s /home/ajrator/.autojump/etc/profile.d/autojump.sh ]] && source /home/ajrator/.autojump/etc/profile.d/autojump.sh
 	autoload -U compinit && compinit -u

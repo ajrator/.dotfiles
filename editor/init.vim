@@ -325,3 +325,6 @@ command! -bang -nargs=? -complete=dir Files
 " Goyo with Limelight for Focus Mode in Vim
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" Copy yank to Clipboard
+set clipboard=unnamedplus

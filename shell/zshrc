@@ -206,3 +206,9 @@ VIM_MODE_INITIAL_KEYMAP=viins
 # Configure Go Path
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/bin
+
+# Make directory and cd into it
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}

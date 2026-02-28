@@ -7,11 +7,8 @@ fi
 
 # Path to your oh-my-zsh installation.
 case `uname` in
-    Darwin)	
+    Darwin)
         export ZSH="/Users/ajrator/.oh-my-zsh"
-	export PATH="/Users/ajrator/anaconda3/bin/:$PATH"
-	export PATH="$PATH:`pwd`/flutter/bin"
-	source ~/anaconda3/etc/profile.d/conda.sh
     ;;
     Linux)
         export ZSH="/home/ajrator/.oh-my-zsh"
@@ -118,16 +115,12 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Syntax Highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    # Autojump
+    # Autojump (Homebrew, Apple Silicon)
+    [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+    # Autojump (Homebrew, Intel fallback)
     [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 fi
-
-# Syntax Highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -153,7 +146,7 @@ cdd() {
       get_parent_dirs $(dirname "$1")
     fi
   }
-  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf --preview="/usr/local/bin/exa {}" --preview-window=down:30% --height=25% --layout=reverse)
+  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf --preview="eza {}" --preview-window=down:30% --height=25% --layout=reverse)
   cd "$DIR"
 }
 
@@ -212,3 +205,6 @@ mkcd () {
   mkdir "$1"
   cd "$1"
 }
+
+# Machine-specific overrides (API keys, local tools) — not tracked by git
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
